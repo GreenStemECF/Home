@@ -1,0 +1,1515 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      GSS2026 — Call for Abstracts &amp; Registration | Green STEM Symposium
+      2026
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Karla:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --forest: #1b4332;
+        --forest-mid: #2d6a4f;
+        --forest-light: #40916c;
+        --sage: #74c69d;
+        --mint: #b7e4c7;
+        --cream: #fdfaf3;
+        --parchment: #f4eed8;
+        --gold: #c9973a;
+        --gold-light: #e8c06a;
+        --ink: #1a1a14;
+        --ink-muted: #4a4a3a;
+        --ink-faint: #8a8a7a;
+        --white: #ffffff;
+        --rule: rgba(27, 67, 50, 0.15);
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Karla", sans-serif;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 1.75;
+        color: var(--ink);
+        background: var(--cream);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* ── READING PROGRESS ── */
+      #progress-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 3px;
+        background: var(--gold);
+        width: 0%;
+        z-index: 9999;
+        transition: width 0.1s linear;
+      }
+
+      /* ── HEADER ── */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: var(--forest);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 0 2rem;
+      }
+      .header-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 64px;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 22px;
+        letter-spacing: 0.05em;
+        color: var(--white);
+      }
+      .logo-dot {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: var(--gold);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .logo-dot svg {
+        width: 16px;
+        height: 16px;
+        fill: var(--forest);
+      }
+
+      nav {
+        display: flex;
+        gap: 1.75rem;
+      }
+      nav a {
+        color: rgba(255, 255, 255, 0.72);
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        transition: color 0.2s;
+      }
+      nav a:hover {
+        color: var(--gold-light);
+      }
+
+      /* ── HERO ── */
+      .hero {
+        background: var(--forest);
+        padding: 5rem 2rem 4.5rem;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            ellipse 80% 60% at 70% 50%,
+            rgba(45, 106, 79, 0.45) 0%,
+            transparent 70%
+          ),
+          url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='1' fill='rgba(255,255,255,0.04)'/%3E%3C/svg%3E");
+        pointer-events: none;
+      }
+      .hero-inner {
+        max-width: 820px;
+        margin: 0 auto;
+        position: relative;
+      }
+      .hero-eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 1.5rem;
+      }
+      .tag {
+        font-family: "Karla", sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        background: var(--gold);
+        color: var(--forest);
+        padding: 4px 12px;
+        border-radius: 2px;
+      }
+      .hero-date {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.5);
+        letter-spacing: 0.04em;
+      }
+      .hero h1 {
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 600;
+        font-size: clamp(2.4rem, 5vw, 3.8rem);
+        line-height: 1.1;
+        color: var(--white);
+        margin-bottom: 1.75rem;
+        letter-spacing: -0.01em;
+      }
+      .hero-lead {
+        font-size: 1.15rem;
+        color: rgba(255, 255, 255, 0.72);
+        line-height: 1.65;
+        max-width: 640px;
+        border-left: 3px solid var(--gold);
+        padding-left: 1.25rem;
+      }
+      .hero-meta {
+        margin-top: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+      }
+      .hero-avatar {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: var(--forest-light);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 15px;
+        color: var(--white);
+        flex-shrink: 0;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+      }
+      .hero-author {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.6);
+      }
+      .hero-author strong {
+        color: var(--white);
+        display: block;
+        font-size: 15px;
+      }
+
+      /* ── LAYOUT ── */
+      .page-wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+        display: grid;
+        grid-template-columns: 1fr 320px;
+        gap: 4rem;
+        align-items: start;
+      }
+
+      /* ── ARTICLE BODY ── */
+      .article-body > * + * {
+        margin-top: 1.5rem;
+      }
+
+      .article-body p {
+        font-family: "Karla", sans-serif;
+        font-size: 17px;
+        line-height: 1.8;
+        color: var(--ink-muted);
+      }
+      .article-body p strong {
+        color: var(--ink);
+        font-weight: 700;
+      }
+
+      .article-body h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 600;
+        font-size: 2rem;
+        color: var(--forest);
+        line-height: 1.2;
+        margin-top: 3rem;
+        padding-top: 2.5rem;
+        border-top: 1px solid var(--rule);
+      }
+      .article-body h2:first-child {
+        margin-top: 0;
+        padding-top: 0;
+        border-top: none;
+      }
+
+      /* ── PULL QUOTE ── */
+      .pull-quote {
+        background: var(--forest);
+        border-radius: 4px;
+        padding: 2rem 2.25rem;
+        margin: 2.5rem 0 !important;
+        position: relative;
+      }
+      .pull-quote::before {
+        content: "\201C";
+        font-family: "Cormorant Garamond", serif;
+        font-size: 5rem;
+        line-height: 1;
+        color: var(--gold);
+        position: absolute;
+        top: 0.5rem;
+        left: 1.5rem;
+        opacity: 0.5;
+      }
+      .pull-quote p {
+        font-family: "Cormorant Garamond", serif !important;
+        font-style: italic;
+        font-size: 1.25rem !important;
+        line-height: 1.55 !important;
+        color: var(--white) !important;
+        padding-left: 0.5rem;
+      }
+      .pull-quote p strong {
+        color: var(--gold-light) !important;
+        font-weight: 600;
+      }
+
+      /* ── LISTS ── */
+      .article-body ul {
+        padding-left: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.65rem;
+      }
+      .article-body ul li {
+        display: flex;
+        gap: 0.75rem;
+        align-items: baseline;
+        font-family: "Karla", sans-serif;
+        font-size: 16px;
+        line-height: 1.7;
+        color: var(--ink-muted);
+      }
+      .article-body ul li::before {
+        content: "▸";
+        color: var(--forest-light);
+        flex-shrink: 0;
+        font-size: 12px;
+        margin-top: 4px;
+      }
+      .article-body ul li strong {
+        color: var(--ink);
+      }
+
+      /* ── RESOLUTIONS / BENEFITS GRID ── */
+      .resolutions-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin: 1.5rem 0;
+      }
+      .resolution-card {
+        background: var(--white);
+        border: 1px solid var(--rule);
+        border-left: 4px solid var(--forest-mid);
+        border-radius: 0 4px 4px 0;
+        padding: 1rem 1.25rem;
+        transition:
+          border-left-color 0.2s,
+          transform 0.2s;
+      }
+      .resolution-card:hover {
+        border-left-color: var(--gold);
+        transform: translateX(3px);
+      }
+      .resolution-num {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 2rem;
+        color: var(--mint);
+        line-height: 1;
+        margin-bottom: 0.35rem;
+      }
+      .resolution-card p {
+        font-size: 14px !important;
+        line-height: 1.55 !important;
+        color: var(--ink-muted) !important;
+        margin: 0 !important;
+      }
+
+      /* ── COMMITMENT BLOCKS ── */
+      .commitment-block {
+        display: flex;
+        gap: 1.25rem;
+        align-items: flex-start;
+        background: var(--parchment);
+        border-radius: 4px;
+        padding: 1.25rem 1.5rem;
+        margin: 0.75rem 0 !important;
+      }
+      .commitment-icon {
+        width: 40px;
+        height: 40px;
+        background: var(--forest);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .commitment-icon svg {
+        width: 18px;
+        height: 18px;
+        stroke: var(--gold);
+        fill: none;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .commitment-block p {
+        font-size: 15px !important;
+        color: var(--ink-muted) !important;
+        margin: 0 !important;
+      }
+      .commitment-block p strong {
+        color: var(--forest) !important;
+        display: block;
+        margin-bottom: 2px;
+      }
+
+      /* ── STAT STRIP ── */
+      .stat-strip {
+        display: flex;
+        gap: 1px;
+        background: var(--rule);
+        border: 1px solid var(--rule);
+        border-radius: 6px;
+        overflow: hidden;
+        margin: 2rem 0;
+      }
+      .stat-item {
+        background: var(--white);
+        flex: 1;
+        padding: 1.25rem 1rem;
+        text-align: center;
+      }
+      .stat-number {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 2.5rem;
+        color: var(--forest);
+        line-height: 1;
+        display: block;
+      }
+      .stat-label {
+        font-size: 12px;
+        color: var(--ink-faint);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-top: 4px;
+        display: block;
+      }
+
+      /* ── DETAIL ROW (like key-value pairs) ── */
+      .detail-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.5rem 0;
+        border: 1px solid var(--rule);
+        border-radius: 6px;
+        overflow: hidden;
+      }
+      .detail-table tr:nth-child(even) {
+        background: var(--parchment);
+      }
+      .detail-table tr:nth-child(odd) {
+        background: var(--white);
+      }
+      .detail-table td {
+        padding: 0.85rem 1.25rem;
+        font-size: 15px;
+        border-bottom: 1px solid var(--rule);
+        vertical-align: top;
+        line-height: 1.6;
+      }
+      .detail-table tr:last-child td {
+        border-bottom: none;
+      }
+      .detail-table td:first-child {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--ink-faint);
+        white-space: nowrap;
+        width: 160px;
+      }
+      .detail-table td:last-child {
+        color: var(--ink-muted);
+      }
+      .detail-table td strong {
+        color: var(--ink);
+      }
+      .detail-table a {
+        color: var(--forest-light);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .detail-table a:hover {
+        color: var(--gold);
+      }
+
+      /* ── TIMELINE ── */
+      .timeline {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        margin: 1.5rem 0;
+        border-left: 2px solid var(--forest-mid);
+        padding-left: 1.5rem;
+      }
+      .timeline-item {
+        position: relative;
+        padding: 0.75rem 0 0.75rem 0.5rem;
+        border-bottom: 1px dashed var(--rule);
+      }
+      .timeline-item:last-child {
+        border-bottom: none;
+      }
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: -1.85rem;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--gold);
+        border: 2px solid var(--cream);
+      }
+      .timeline-date {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 1rem;
+        letter-spacing: 0.05em;
+        color: var(--forest);
+        display: block;
+      }
+      .timeline-desc {
+        font-size: 14px;
+        color: var(--ink-muted);
+        line-height: 1.5;
+      }
+
+      /* ── JOIN LINK BOX ── */
+      .join-box {
+        background: var(--parchment);
+        border: 1px solid var(--rule);
+        border-left: 4px solid var(--forest-mid);
+        border-radius: 0 4px 4px 0;
+        padding: 1.5rem 1.75rem;
+        margin: 2rem 0 !important;
+      }
+      .join-box h4 {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 1.1rem;
+        letter-spacing: 0.08em;
+        color: var(--forest);
+        margin-bottom: 0.75rem;
+      }
+      .join-box p {
+        font-size: 14px !important;
+        color: var(--ink-muted) !important;
+        margin-bottom: 0.4rem !important;
+        line-height: 1.6 !important;
+      }
+      .join-box a {
+        color: var(--forest-light);
+        font-weight: 700;
+        text-decoration: none;
+        word-break: break-all;
+      }
+      .join-box a:hover {
+        color: var(--gold);
+      }
+      .join-box .meta-row {
+        display: flex;
+        gap: 2rem;
+        margin-top: 0.75rem;
+        flex-wrap: wrap;
+      }
+      .join-box .meta-item {
+        font-size: 13px;
+        color: var(--ink-faint);
+      }
+      .join-box .meta-item strong {
+        color: var(--ink);
+        display: block;
+        font-size: 14px;
+      }
+
+      /* ── FINAL CTA ── */
+      .cta-banner {
+        background: var(--forest);
+        border-radius: 8px;
+        padding: 2.5rem;
+        text-align: center;
+        margin-top: 3rem;
+      }
+      .cta-banner p {
+        font-family: "Cormorant Garamond", serif !important;
+        font-size: 1.5rem !important;
+        font-style: italic;
+        color: var(--white) !important;
+        line-height: 1.45 !important;
+        margin: 0 0 1.25rem !important;
+      }
+      .cta-banner p em {
+        color: var(--gold-light);
+        font-style: normal;
+        font-weight: 600;
+      }
+      .cta-btn {
+        display: inline-block;
+        background: var(--gold);
+        color: var(--forest);
+        font-family: "Karla", sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 12px 28px;
+        border-radius: 3px;
+        text-decoration: none;
+        transition:
+          background 0.2s,
+          transform 0.15s;
+      }
+      .cta-btn:hover {
+        background: var(--gold-light);
+        transform: translateY(-1px);
+      }
+
+      /* ── SIGNATURE ── */
+      .signature-block {
+        border-top: 2px solid var(--forest);
+        padding-top: 1.5rem;
+        margin-top: 2.5rem;
+      }
+      .signature-block .sig-label {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--forest-light);
+        margin-bottom: 1rem;
+        display: block;
+      }
+      .sig-names {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .sig-name {
+        font-family: "Karla", sans-serif;
+        font-size: 14px;
+        color: var(--ink-muted);
+        line-height: 1.4;
+      }
+      .sig-name strong {
+        color: var(--ink);
+        font-size: 15px;
+        display: block;
+      }
+
+      /* ── SIDEBAR ── */
+      .sidebar {
+        position: sticky;
+        top: 84px;
+      }
+
+      .sidebar-card {
+        background: var(--white);
+        border: 1px solid var(--rule);
+        border-radius: 6px;
+        overflow: hidden;
+        margin-bottom: 1.5rem;
+      }
+      .sidebar-card-head {
+        background: var(--forest);
+        padding: 0.85rem 1.25rem;
+      }
+      .sidebar-card-head h3 {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 1.05rem;
+        letter-spacing: 0.08em;
+        color: var(--white);
+      }
+      .sidebar-card-body {
+        padding: 1.25rem;
+      }
+      .sidebar-card-body p {
+        font-size: 14px;
+        color: var(--ink-muted);
+        line-height: 1.65;
+        margin-bottom: 1rem;
+      }
+      .sidebar-btn {
+        display: block;
+        width: 100%;
+        text-align: center;
+        background: var(--forest);
+        color: var(--white);
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        padding: 10px 16px;
+        border-radius: 3px;
+        transition: background 0.2s;
+      }
+      .sidebar-btn:hover {
+        background: var(--forest-mid);
+      }
+      .sidebar-btn.gold {
+        background: var(--gold);
+        color: var(--forest);
+      }
+      .sidebar-btn.gold:hover {
+        background: var(--gold-light);
+      }
+
+      .quick-facts-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+      .quick-facts-list li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.65rem 0;
+        border-bottom: 1px solid var(--rule);
+        font-size: 13px;
+        list-style: none;
+      }
+      .quick-facts-list li:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+      .qf-label {
+        color: var(--ink-faint);
+      }
+      .qf-value {
+        font-weight: 700;
+        color: var(--forest);
+      }
+
+      .tags-cloud {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .tag-chip {
+        font-size: 12px;
+        font-weight: 500;
+        background: var(--parchment);
+        color: var(--forest-mid);
+        border: 1px solid var(--rule);
+        padding: 4px 10px;
+        border-radius: 100px;
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        background: var(--forest);
+        color: rgba(255, 255, 255, 0.65);
+        padding: 3rem 2rem;
+        margin-top: 4rem;
+      }
+      .footer-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 3rem;
+      }
+      footer h4 {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 1.1rem;
+        letter-spacing: 0.1em;
+        color: var(--white);
+        margin-bottom: 1rem;
+      }
+      footer p {
+        font-size: 14px;
+        line-height: 1.7;
+      }
+      footer ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      footer ul li a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        font-size: 14px;
+        transition: color 0.2s;
+      }
+      footer ul li a:hover {
+        color: var(--gold-light);
+      }
+      .footer-social {
+        display: flex;
+        gap: 12px;
+        margin-top: 1rem;
+      }
+      .social-link {
+        width: 36px;
+        height: 36px;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 14px;
+        transition:
+          background 0.2s,
+          color 0.2s;
+      }
+      .social-link:hover {
+        background: var(--gold);
+        color: var(--forest);
+      }
+      .footer-bottom {
+        max-width: 1200px;
+        margin: 2rem auto 0;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.35);
+        text-align: center;
+      }
+
+      /* ── ANIMATIONS ── */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(18px);
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
+      }
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (max-width: 900px) {
+        .page-wrapper {
+          grid-template-columns: 1fr;
+        }
+        .sidebar {
+          position: static;
+        }
+        .resolutions-grid {
+          grid-template-columns: 1fr;
+        }
+        .footer-inner {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+        nav {
+          display: none;
+        }
+        .detail-table td:first-child {
+          width: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="progress-bar"></div>
+
+    <!-- HEADER -->
+    <header>
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <div class="logo-dot">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C6.5 7 4 10 4 14a8 8 0 0016 0c0-4-2.5-7-8-12z" />
+            </svg>
+          </div>
+          Green Stem ECF
+        </a>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="index.html#about-section">About</a>
+          <a href="index.html#discover-section">Discover</a>
+          <a href="index.html#donate-section">Donate</a>
+          <a href="index.html#blog-section">Blog</a>
+          <a href="index.html#contact-section">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-inner">
+        <div class="hero-eyebrow fade-in">
+          <span class="tag">GSS2026 — 5th Edition</span>
+          <span class="hero-date">Thursday, 20 August 2026</span>
+        </div>
+        <h1 class="fade-in">
+          Green STEM Symposium 2026:<br />Call for Abstracts<br />&amp;
+          Registration
+        </h1>
+        <p class="hero-lead fade-in">
+          Funding Frameworks and Models for Research, Innovation and
+          Commercialisation for Industrialisation of Nigeria.
+        </p>
+        <div class="hero-meta fade-in">
+          <div class="hero-avatar">GS</div>
+          <div class="hero-author">
+            <strong>Green STEM Educational &amp; Charitable Foundation</strong>
+            Promoting Research, Innovation &amp; Commercialisation as the
+            pathway to African industrialisation
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN -->
+    <div class="page-wrapper">
+      <article class="article-body">
+        <!-- STAT STRIP -->
+        <div class="stat-strip fade-in">
+          <div class="stat-item">
+            <span class="stat-number">5th</span>
+            <span class="stat-label">Annual Edition</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">Free</span>
+            <span class="stat-label">Participation</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">Hybrid</span>
+            <span class="stat-label">Format</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">₦100k</span>
+            <span class="stat-label">Spotlight Award</span>
+          </div>
+        </div>
+
+        <p class="fade-in">
+          <strong>Green STEM Educational and Charitable Foundation</strong> (<a
+            href="http://www.greenstem.org.ng"
+            style="color: var(--forest-light)"
+            >www.greenstem.org.ng</a
+          >) focuses on promoting Research, Innovation and Commercialisation of
+          Research (RIC) as the sustainable pathway to industrialisation of
+          Nigeria and Africa. We believe that strategic synergy between research
+          institutions, government agencies and companies is required to
+          innovate products and services that would improve national
+          productivity and sustainable development.
+        </p>
+
+        <p class="fade-in">
+          The
+          <strong>5th International Green STEM Symposium 2026 (GSS2026)</strong>
+          seeks to explore how industrialisation of the Nigerian economy can be
+          facilitated through creative and innovative funding of research and
+          innovation. We therefore invite Lecturers, Researchers, Professionals,
+          Practitioners, Entrepreneurs, Innovators, PhD Students, PostDocs,
+          Government Agencies, and NGOs to submit an abstract for oral or poster
+          presentation.
+        </p>
+
+        <div class="pull-quote fade-in">
+          <p>
+            <strong
+              >"Funding is the oxygen of innovation. Without deliberate
+              frameworks to finance research and commercialisation, Nigeria's
+              industrial potential will remain unrealised."</strong
+            >
+          </p>
+        </div>
+
+        <h2 class="fade-in">Symposium Details</h2>
+
+        <table class="detail-table fade-in">
+          <tr>
+            <td>Theme</td>
+            <td>
+              <strong
+                >Funding Frameworks and Models for Research, Innovation and
+                Commercialisation for Industrialisation of Nigeria</strong
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>Date</td>
+            <td><strong>Thursday, 20 August 2026</strong></td>
+          </tr>
+          <tr>
+            <td>Time</td>
+            <td><strong>11:00 am – 4:00 pm</strong> (Nigerian Time)</td>
+          </tr>
+          <tr>
+            <td>Format</td>
+            <td>
+              <strong>Hybrid</strong> — Yakubu Gowon University, Abuja (formerly
+              University of Abuja) &amp; Microsoft Teams
+            </td>
+          </tr>
+          <tr>
+            <td>Participation</td>
+            <td><strong>Free of charge</strong> for all virtual attendees</td>
+          </tr>
+        </table>
+
+        <div class="join-box fade-in">
+          <h4>📅 Microsoft Teams — Virtual Attendance</h4>
+          <p>
+            Save this link on your Calendar and share with your colleagues.
+            Attendance to the Symposium is free of charge via this Teams link.
+          </p>
+          <p>
+            <strong>Join the meeting:</strong>
+            <a
+              href="https://teams.microsoft.com/meet/322286862815007?p=7FUfMFZX9EZogs5j4H"
+              target="_blank"
+              rel="noopener"
+              >https://teams.microsoft.com/meet/322286862815007</a
+            >
+          </p>
+          <div class="meta-row">
+            <div class="meta-item">
+              <strong>Meeting ID</strong>322 286 862 815 007
+            </div>
+            <div class="meta-item"><strong>Passcode</strong>Qt3mu2Zs</div>
+          </div>
+        </div>
+
+        <h2 class="fade-in">Submission Criteria for the Plenary Session</h2>
+
+        <p class="fade-in">
+          Abstracts submitted must be a product of scientific research, although
+          any methodology may be adopted — for example: Experimental, Modelling,
+          Mixed Method, Case Study, Qualitative Research, and others. Research
+          may be transdisciplinary, interdisciplinary, or multidisciplinary, but
+          <strong
+            >the problem of study must be linked to sustainable
+            industrialisation</strong
+          >
+          to create products, services, processes, engineered systems, social
+          systems, business models, government policies, and so forth.
+        </p>
+
+        <p class="fade-in">
+          The author(s) will make a presentation during the Symposium. After the
+          Symposium, interested author(s) can submit a full article for
+          publication in DAPresses Journals:
+        </p>
+
+        <ul class="fade-in">
+          <li><strong>Dialogic STEM Journal</strong> (ISSN: 3141-2122)</li>
+          <li><strong>Dialogic Society Journal</strong> (ISSN: 3141-2130)</li>
+        </ul>
+
+        <p class="fade-in" style="font-size: 15px; color: var(--ink-faint)">
+          Both journals are available at
+          <a
+            href="http://www.dapresses.com"
+            style="color: var(--forest-light)"
+            target="_blank"
+            >www.dapresses.com</a
+          >.
+        </p>
+
+        <h2 class="fade-in">Presentation Format</h2>
+
+        <div class="commitment-block fade-in">
+          <div class="commitment-icon">
+            <svg viewBox="0 0 24 24">
+              <rect x="2" y="3" width="20" height="14" rx="2" />
+              <path d="M8 21h8M12 17v4" />
+            </svg>
+          </div>
+          <p>
+            <strong>Oral Presentation — 15 Minutes</strong>Authors will present
+            their work to participants. Include as many slides as can be
+            comfortably presented within this allocated time.
+          </p>
+        </div>
+
+        <div class="commitment-block fade-in">
+          <div class="commitment-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+            </svg>
+          </div>
+          <p>
+            <strong>Poster Presentation — 10 Minutes</strong>Poster presenters
+            will be allocated a total of 10 minutes to present and discuss their
+            work with symposium participants.
+          </p>
+        </div>
+
+        <h2 class="fade-in">Abstract Submission Timeline</h2>
+
+        <div class="timeline fade-in">
+          <div class="timeline-item">
+            <span class="timeline-date">4 June 2026</span>
+            <span class="timeline-desc"
+              >Abstract acceptance opens. Submissions begin.</span
+            >
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-date">Within 1 Week of Submission</span>
+            <span class="timeline-desc"
+              >Feedback provided to authors. Only quality abstracts will be
+              accepted and processed further.</span
+            >
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-date">15 August 2026</span>
+            <span class="timeline-desc"
+              ><strong>Deadline for abstract submission.</strong> No late
+              submissions will be considered.</span
+            >
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-date">20 August 2026</span>
+            <span class="timeline-desc"
+              >Symposium day — oral and poster presentations.</span
+            >
+          </div>
+        </div>
+
+        <h2 class="fade-in">Abstract Processing Fee</h2>
+
+        <p class="fade-in">
+          Only accepted abstracts will be required to pay the article processing
+          fee. Payment should be made to:
+        </p>
+
+        <table class="detail-table fade-in">
+          <tr>
+            <td>Fee</td>
+            <td><strong>₦20,000</strong> (Twenty Thousand Naira Only)</td>
+          </tr>
+          <tr>
+            <td>Account Name</td>
+            <td>
+              <strong>Green STEM Educational and Charitable Foundation</strong>
+            </td>
+          </tr>
+          <tr>
+            <td>Account Number</td>
+            <td><strong>4410001407</strong></td>
+          </tr>
+          <tr>
+            <td>Bank</td>
+            <td><strong>Fidelity Bank Plc</strong></td>
+          </tr>
+        </table>
+
+        <h2 class="fade-in">Benefits of Participating in GSS2026</h2>
+
+        <div class="resolutions-grid fade-in">
+          <div class="resolution-card">
+            <div class="resolution-num">01</div>
+            <p>
+              Opportunity to present your research outputs to an
+              <strong>international audience</strong>.
+            </p>
+          </div>
+          <div class="resolution-card">
+            <div class="resolution-num">02</div>
+            <p>
+              Participate from <strong>anywhere in the world</strong> from the
+              comfort of your office or home.
+            </p>
+          </div>
+          <div class="resolution-card">
+            <div class="resolution-num">03</div>
+            <p>
+              Paper will be
+              <strong>published in DAPresses.com Journals</strong> —
+              peer-reviewed and indexed.
+            </p>
+          </div>
+          <div class="resolution-card">
+            <div class="resolution-num">04</div>
+            <p>
+              Opportunity to pay the
+              <strong>Abstract Processing Fee in Naira</strong> — accessible to
+              all Nigerian researchers.
+            </p>
+          </div>
+          <div class="resolution-card">
+            <div class="resolution-num">05</div>
+            <p>
+              All abstracts are <strong>peer-reviewed by experts</strong> in
+              your field.
+            </p>
+          </div>
+          <div class="resolution-card">
+            <div class="resolution-num">06</div>
+            <p>
+              Opportunity to form
+              <strong>new research networks and collaborations</strong> across
+              Nigeria and internationally.
+            </p>
+          </div>
+          <div class="resolution-card">
+            <div class="resolution-num">07</div>
+            <p>
+              Opportunity to win the
+              <strong>Green STEM Spotlight Award</strong> and a Certificate of
+              Award.
+            </p>
+          </div>
+          <div class="resolution-card">
+            <div class="resolution-num">08</div>
+            <p>
+              <strong>Hybrid Symposium</strong> — join in-person at Yakubu Gowon
+              University Abuja or participate virtually.
+            </p>
+          </div>
+        </div>
+
+        <h2 class="fade-in">Green STEM Spotlight Awards</h2>
+
+        <p class="fade-in">
+          The best oral presentations will win the
+          <strong>Green STEM Spotlight Awards</strong> — a cash prize of
+          <strong>₦100,000</strong> and a Certificate of Award. This is our way
+          of recognising and celebrating excellence in research that advances
+          Nigeria's industrialisation agenda.
+        </p>
+
+        <div class="pull-quote fade-in">
+          <p>
+            <strong
+              >"Research without recognition withers. GSS2026 Spotlight Awards
+              celebrate the boldest thinking — and reward those who dare to turn
+              knowledge into national progress."</strong
+            >
+          </p>
+        </div>
+
+        <div class="cta-banner fade-in">
+          <p>
+            "The future of Nigeria's industrialisation begins with a single
+            submitted abstract.<br /><em>Submit yours today.</em>"
+          </p>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLScq7iNRLIjof4XFUGQzMf47xOaUl_0CIqWy1vyW1_3HsI_ZWg/viewform"
+            class="cta-btn"
+            >Register &amp; Submit Abstract</a
+          >
+        </div>
+
+        <!-- COMMITTEE -->
+        <div class="signature-block fade-in">
+          <span class="sig-label">Green STEM Symposium Committee Members</span>
+          <div class="sig-names">
+            <div class="sig-name">
+              <strong>Dr Mohammed Yadudu</strong>
+              Chair, Green STEM Symposium
+            </div>
+            <div class="sig-name">
+              <strong>Dr Perpetual Eze-Idehen</strong>
+              The University of Manchester, United Kingdom
+            </div>
+            <div class="sig-name">
+              <strong>Dr Mutari Lawal</strong>
+              University of Abuja, Nigeria
+            </div>
+            <div class="sig-name">
+              <strong>Dr Chukwuma Ogbonnaya</strong>
+              Loughborough University, United Kingdom
+            </div>
+            <div class="sig-name">
+              <strong>Dr Bibian Okokhere-Edeghoghon</strong>
+              University of Bath, United Kingdom
+            </div>
+            <div class="sig-name">
+              <strong>Dr Jide Edu</strong>
+              University of Strathclyde, United Kingdom
+            </div>
+            <div class="sig-name">
+              <strong>Dr Nathaniel Obasi</strong>
+              National Open University, Nigeria
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="sidebar-card fade-in">
+          <div class="sidebar-card-head">
+            <h3>Register &amp; Submit</h3>
+          </div>
+          <div class="sidebar-card-body">
+            <p>
+              All participants should complete the registration form to receive
+              the Symposium programme and Proceedings.
+            </p>
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLScq7iNRLIjof4XFUGQzMf47xOaUl_0CIqWy1vyW1_3HsI_ZWg/viewform"
+              class="sidebar-btn gold"
+              target="_blank"
+              >Submit Abstract →</a
+            >
+            <br /><br />
+            <p style="font-size: 13px; color: var(--ink-faint)">
+              Participation is <strong>free of charge</strong>. Only accepted
+              abstracts require an article processing fee.
+            </p>
+          </div>
+        </div>
+
+        <div class="sidebar-card fade-in">
+          <div class="sidebar-card-head">
+            <h3>Key Dates</h3>
+          </div>
+          <div class="sidebar-card-body">
+            <ul class="quick-facts-list">
+              <li>
+                <span class="qf-label">Submissions Open</span
+                ><span class="qf-value">4 Jun 2026</span>
+              </li>
+              <li>
+                <span class="qf-label">Feedback Within</span
+                ><span class="qf-value">1 Week</span>
+              </li>
+              <li>
+                <span class="qf-label">Deadline</span
+                ><span class="qf-value">15 Aug 2026</span>
+              </li>
+              <li>
+                <span class="qf-label">Symposium Date</span
+                ><span class="qf-value">20 Aug 2026</span>
+              </li>
+              <li>
+                <span class="qf-label">Symposium Time</span
+                ><span class="qf-value">11am – 4pm (NG)</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="sidebar-card fade-in">
+          <div class="sidebar-card-head">
+            <h3>Quick Facts</h3>
+          </div>
+          <div class="sidebar-card-body">
+            <ul class="quick-facts-list">
+              <li>
+                <span class="qf-label">Edition</span
+                ><span class="qf-value">5th Annual</span>
+              </li>
+              <li>
+                <span class="qf-label">Format</span
+                ><span class="qf-value">Hybrid</span>
+              </li>
+              <li>
+                <span class="qf-label">Entry Fee</span
+                ><span class="qf-value">Free</span>
+              </li>
+              <li>
+                <span class="qf-label">Processing Fee</span
+                ><span class="qf-value">₦20,000</span>
+              </li>
+              <li>
+                <span class="qf-label">Spotlight Prize</span
+                ><span class="qf-value">₦100,000</span>
+              </li>
+              <li>
+                <span class="qf-label">Oral Slot</span
+                ><span class="qf-value">15 mins</span>
+              </li>
+              <li>
+                <span class="qf-label">Poster Slot</span
+                ><span class="qf-value">10 mins</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="sidebar-card fade-in">
+          <div class="sidebar-card-head">
+            <h3>Tags</h3>
+          </div>
+          <div class="sidebar-card-body">
+            <div class="tags-cloud">
+              <span class="tag-chip">#GSS2026</span>
+              <span class="tag-chip">#GreenSTEM</span>
+              <span class="tag-chip">#NigeriaIndustry</span>
+              <span class="tag-chip">#ResearchFunding</span>
+              <span class="tag-chip">#Innovation</span>
+              <span class="tag-chip">#Commercialisation</span>
+              <span class="tag-chip">#STEM</span>
+              <span class="tag-chip">#CallForAbstracts</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-card fade-in">
+          <div class="sidebar-card-head">
+            <h3>Contact &amp; Enquiries</h3>
+          </div>
+          <div class="sidebar-card-body">
+            <p>For questions, sponsorship, advertising, and other enquiries:</p>
+            <p>
+              <a
+                href="mailto:info@greenstem.org.ng"
+                style="color: var(--forest-light); font-weight: 700"
+                >info@greenstem.org.ng</a
+              >
+            </p>
+            <p>
+              <a
+                href="tel:+447438503799"
+                style="color: var(--forest-light); font-weight: 700"
+                >+44 7438 503799</a
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="sidebar-card fade-in">
+          <div class="sidebar-card-head">
+            <h3>Follow Us</h3>
+          </div>
+          <div class="sidebar-card-body">
+            <div class="footer-social">
+              <a
+                class="social-link"
+                href="https://www.youtube.com/@GSTEMNG"
+                title="YouTube"
+                aria-label="YouTube"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.4 5 12 5 12 5s-4.4 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5C2 14.3 2.2 16 2.2 16s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.4 19 12 19 12 19s4.4 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2S22 14.3 22 12.7v-1.5C22 9.6 21.8 8 21.8 8zM10 15V9l5.2 3-5.2 3z"
+                  />
+                </svg>
+              </a>
+              <a
+                class="social-link"
+                href="https://www.linkedin.com/company/green-stem-educational-and-charitable-foundation/posts/?feedView=all"
+                title="LinkedIn"
+                aria-label="LinkedIn"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <div>
+          <h4>About Us</h4>
+          <p>
+            Green Stem Educational and Charitable Foundation advances education,
+            research, and innovation by integrating environmental sustainability
+            with STEM.
+          </p>
+        </div>
+        <div>
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about-section">About Us</a></li>
+            <li><a href="index.html#testimonials-section">Testimonials</a></li>
+            <li><a href="index.html#donate-section">Donate</a></li>
+            <li><a href="index.html#contact-section">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Volunteer</h4>
+          <p>
+            Join us — share your time, skills, and passion to inspire young
+            minds and support STEM education for a sustainable future.
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; <span id="year"></span> Green Stem Educational and Charitable
+        Foundation. All rights reserved.
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      const bar = document.getElementById("progress-bar");
+      window.addEventListener("scroll", () => {
+        const scrollTop = window.scrollY;
+        const docH = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (scrollTop / docH) * 100 + "%";
+      });
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add("visible");
+          });
+        },
+        { threshold: 0.12 },
+      );
+      document
+        .querySelectorAll(".fade-in")
+        .forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>

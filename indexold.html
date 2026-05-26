@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Green Stem Educational and Charitable Foundation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Karla:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --forest: #1B4332;
+      --forest-mid: #2D6A4F;
+      --sage: #74C69D;
+      --mint: #B7E4C7;
+      --cream: #FDFAF3;
+      --parchment: #F4EED8;
+      --gold: #C9973A;
+      --ink: #1A1A14;
+      --ink-muted: #4A4A3A;
+      --rule: rgba(27,67,50,0.12);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Karla', sans-serif; font-size: 17px; line-height: 1.8; color: var(--ink); background: var(--cream); }
+    #progress-bar { position: fixed; top: 0; left: 0; height: 4px; width: 0; background: var(--gold); z-index: 999; transition: width 0.15s ease; }
+    header { position: sticky; top: 0; background: var(--forest); border-bottom: 1px solid rgba(255,255,255,0.08); z-index: 20; }
+    .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; height: 68px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { display: flex; align-items: center; gap: 12px; color: #fff; text-decoration: none; font-family: 'Bebas Neue', sans-serif; font-size: 1.25rem; letter-spacing: 0.12em; }
+    .logo-dot { width: 32px; height: 32px; border-radius: 50%; background: var(--gold); display: grid; place-items: center; }
+    .logo-dot svg { width: 16px; height: 16px; fill: var(--forest); }
+    nav { display: flex; gap: 1.5rem; }
+    nav a { color: rgba(255,255,255,0.78); text-decoration: none; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; transition: color 0.2s; }
+    nav a:hover { color: var(--mint); }
+    .hero { background: linear-gradient(180deg, rgba(27,67,50,0.95), rgba(27,67,50,0.88)), url('images/green-confrence.jpg') center/cover no-repeat; color: #fff; padding: 6rem 1.5rem 5rem; }
+    .hero-inner { max-width: 900px; margin: 0 auto; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 10px; background: var(--gold); color: var(--forest); padding: 8px 14px; border-radius: 999px; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+    .hero h1 { margin-top: 1.8rem; font-family: 'Cormorant Garamond', serif; font-size: clamp(2.6rem, 5vw, 4.2rem); line-height: 0.98; letter-spacing: -0.03em; }
+    .hero p { margin-top: 1.6rem; max-width: 680px; color: rgba(255,255,255,0.88); font-size: 1.05rem; }
+    .hero-actions { margin-top: 2.5rem; display: flex; flex-wrap: wrap; gap: 1rem; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.95rem 1.6rem; border-radius: 999px; font-weight: 700; text-decoration: none; transition: transform 0.18s ease, background 0.18s ease; }
+    .btn-primary { background: var(--gold); color: var(--forest); }
+    .btn-primary:hover { background: #e0b358; transform: translateY(-2px); }
+    .btn-secondary { border: 1px solid rgba(255,255,255,0.32); color: rgba(255,255,255,0.92); }
+    .btn-secondary:hover { background: rgba(255,255,255,0.08); }
+    .page-content { max-width: 1200px; margin: 0 auto; padding: 4rem 1.5rem 3rem; display: grid; grid-template-columns: 1fr 320px; gap: 3.5rem; }
+    .section { margin-bottom: 3.5rem; }
+    .section-title { font-family:'Cormorant Garamond', serif; font-size: clamp(2rem, 3vw, 2.6rem); color: var(--forest); margin-bottom: 1rem; }
+    .text-muted { color: var(--ink-muted); }
+    .cards-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); }
+    .card { background: #fff; border: 1px solid var(--rule); border-radius: 16px; padding: 1.6rem; box-shadow: 0 18px 56px rgba(27,67,50,0.04); }
+    .card h3 { margin-bottom: 0.75rem; font-size: 1.05rem; color: var(--forest); }
+    .card p { color: var(--ink-muted); }
+    .stats-grid { display: grid; gap: 1rem; grid-template-columns: repeat(4,minmax(0,1fr)); margin-top: 1.8rem; }
+    .stat { background: #fff; border: 1px solid var(--rule); border-radius: 16px; padding: 1.3rem; text-align: center; }
+    .stat strong { display:block; font-size:1.8rem; color: var(--forest); margin-bottom: 0.4rem; }
+    .stat small { display:block; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 0.1em; font-size:0.76rem; }
+    .content-grid { display: grid; gap: 1.5rem; grid-template-columns: 1.25fr 0.85fr; align-items: center; }
+    .feature-box { display: grid; gap:0.75rem; padding:1.6rem; border-radius:16px; border:1px solid var(--rule); background:#fff; }
+    .feature-box h3 { color: var(--forest); }
+    .feature-box p { color: var(--ink-muted); }
+    .team-grid { display:grid; gap:1rem; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); }
+    .team-card { background:#fff; border-radius:18px; border:1px solid var(--rule); padding:1.5rem; text-align:center; }
+    .team-card img { width:112px; height:112px; object-fit:cover; border-radius:50%; margin-bottom:1rem; }
+    .team-card h4 { margin-bottom:0.35rem; color: var(--forest); }
+    .team-card span { display:block; color: var(--ink-muted); font-size:0.84rem; letter-spacing:0.08em; text-transform:uppercase; }
+    .testimonial { background: #fff; border-radius: 18px; padding: 1.6rem; border: 1px solid var(--rule); box-shadow: 0 16px 40px rgba(27,67,50,0.05); }
+    .testimonial p { margin-bottom: 1rem; color: var(--ink-muted); font-style: italic; }
+    .testimonial strong { color: var(--forest); display:block; }
+    .blog-grid { display:grid; gap:1rem; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); }
+    .blog-card { background:#fff; border:1px solid var(--rule); border-radius:18px; overflow:hidden; }
+    .blog-card img { width:100%; display:block; }
+    .blog-card-content { padding:1.2rem 1.4rem; }
+    .blog-card h3 { font-size:1.1rem; margin-bottom:0.75rem; color: var(--forest); }
+    .blog-card p { font-size:0.95rem; color: var(--ink-muted); }
+    .footer { background: var(--forest); color: rgba(255,255,255,0.75); padding: 3rem 1.5rem; }
+    .footer-grid { display:grid; gap:1.5rem; grid-template-columns: repeat(auto-fit,minmax(210px,1fr)); max-width:1200px; margin:0 auto; }
+    .footer-grid h4 { color:#fff; font-size:1rem; margin-bottom:1rem; }
+    .footer-grid a { color: rgba(255,255,255,0.8); text-decoration:none; }
+    .footer-grid a:hover { color: var(--gold); }
+    .footer-bottom { text-align:center; color: rgba(255,255,255,0.55); margin-top:2rem; font-size:0.92rem; }
+    @media (max-width: 900px) { .page-content { display:block; } .content-grid { grid-template-columns:1fr; } .stats-grid { grid-template-columns: repeat(2,1fr); } nav { display:none; } .hero { padding:4rem 1.25rem 3rem; } }
+  </style>
+</head>
+<body>
+  <div id="progress-bar"></div>
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-dot"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.5 7 4 10 4 14a8 8 0 0016 0c0-4-2.5-7-8-12z"/></svg></div>
+        Green Stem ECF
+      </a>
+      <nav>
+        <a href="#about-section">About</a>
+        <a href="#discover-section">Discover</a>
+        <a href="#donate-section">Donate</a>
+        <a href="#team-section">Leadership</a>
+        <a href="#blog-section">Blog</a>
+        <a href="#contact-section">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="hero-badge">Green STEM</span>
+      <h1>Accelerating Nigeria’s industrial future through research, innovation and sustainable STEM leadership.</h1>
+      <p>Green Stem Educational and Charitable Foundation builds bridges between research institutions, government, industry and communities to turn ideas into impact.</p>
+      <div class="hero-actions">
+        <a href="#about-section" class="btn btn-primary">Learn More</a>
+        <a href="blog4.html" class="btn btn-secondary">Latest Symposium</a>
+      </div>
+    </div>
+  </section>
+  <div class="page-content">
+    <main>
+      <section id="about-section" class="section">
+        <h2 class="section-title">About Green STEM ECF</h2>
+        <div class="content-grid">
+          <div>
+            <p>Green Stem Educational and Charitable Foundation promotes research, innovation and commercialisation of research as the sustainable pathway to industrialisation of Nigeria and Africa. We support education, mentorship and green technology solutions that strengthen national productivity and sustainable development.</p>
+            <div class="stats-grid">
+              <div class="stat"><strong>5</strong><small>Symposium Edition</small></div>
+              <div class="stat"><strong>50+</strong><small>Research Partners</small></div>
+              <div class="stat"><strong>120+</strong><small>Mentoring Sessions</small></div>
+              <div class="stat"><strong>100%</strong><small>Green Focus</small></div>
+            </div>
+          </div>
+          <div class="feature-box">
+            <h3>Mission</h3>
+            <p>To transform research into commercial and industrial impact through strategic funding frameworks, partnerships and capacity building.</p>
+            <h3>Vision</h3>
+            <p>A sustainable African economy powered by research-led industrialisation and inclusive STEM development.</p>
+          </div>
+        </div>
+      </section>
+      <section id="discover-section" class="section">
+        <h2 class="section-title">Discover Our Work</h2>
+        <div class="cards-grid">
+          <div class="card"><h3>Symposium Leadership</h3><p>Our annual Green STEM Symposium convenes academics, policymakers and innovators to accelerate industrialisation through commercialised research.</p></div>
+          <div class="card"><h3>Innovation Funding</h3><p>We advocate for creative funding frameworks, grant support and research-commercialisation models that unlock Nigeria’s industrial potential.</p></div>
+          <div class="card"><h3>Mentoring Programs</h3><p>Our mentoring scheme links students and early-career researchers with experienced professionals to build practical skills and green careers.</p></div>
+          <div class="card"><h3>Sustainable Impact</h3><p>We prioritize projects that deliver clean energy, agricultural resilience, digital capacity and socially inclusive growth.</p></div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="feature-box">
+          <h3>Why Green STEM?</h3>
+          <p>By combining science, technology, engineering and mathematics with environmental stewardship, we create solutions that are economically viable, socially equitable and climate-responsive.</p>
+        </div>
+        <div class="feature-box" style="margin-top:1rem;">
+          <h3>Our Approach</h3>
+          <p>We connect research institutions, government agencies and companies through collaborative networks, shared funding models and commercialization pathways.</p>
+        </div>
+      </section>
+      <section id="donate-section" class="section">
+        <h2 class="section-title">Support Our Mission</h2>
+        <div class="card" style="display:flex;flex-direction:column;gap:1rem;">
+          <p>Donations help us expand mentorship, research support and green innovation programs across Nigeria.</p>
+          <div><strong>Account Name:</strong> Green STEM Educational and Charitable Foundation</div>
+          <div><strong>Account Number:</strong> 4410001407</div>
+          <div><strong>Bank:</strong> Fidelity Bank Plc</div>
+        </div>
+      </section>
+      <section id="team-section" class="section">
+        <h2 class="section-title">Our Leadership</h2>
+        <div class="team-grid">
+          <div class="team-card"><img src="images/Perpetual.jpeg" alt="Dr Perpetual Idehen"><h4>Dr Perpetual Eze-Idehen</h4><span>Coordinator</span></div>
+          <div class="team-card"><img src="images/chukwuma-ogbonnaya.jpeg" alt="Dr Chukwuma Ogbonnaya"><h4>Dr Chukwuma Ogbonnaya</h4><span>Partnership Lead</span></div>
+          <div class="team-card"><img src="images/Yadudu.jpeg" alt="Dr Mohammad Yadudu"><h4>Dr Mohammad Yadudu</h4><span>Symposium Chair</span></div>
+          <div class="team-card"><img src="images/Waheed-Akande.png" alt="Dr Waheed Akande"><h4>Dr Waheed Akande</h4><span>BoT Chairman</span></div>
+          <div class="team-card"><img src="images/lawal.jpeg" alt="Dr Mutari Lawal"><h4>Dr Mutari Lawal</h4><span>General Secretary</span></div>
+          <div class="team-card"><img src="images/Bibian_Dr.jpeg" alt="Dr Bibian Okokhere-Edeghoghon"><h4>Dr Bibian Okokhere-Edeghoghon</h4><span>Mentoring Lead</span></div>
+        </div>
+      </section>
+      <section class="section">
+        <h2 class="section-title">What People Say</h2>
+        <div class="cards-grid">
+          <div class="testimonial"><p>“The Foundation’s programs have helped students see STEM as a practical force for positive change.”</p><strong>Educator — Ade Jones</strong></div>
+          <div class="testimonial"><p>“Through hands-on projects and mentoring, I gained confidence, skills and a clear sense of purpose.”</p><strong>Student — Ken Davis</strong></div>
+        </div>
+      </section>
+      <section id="blog-section" class="section">
+        <h2 class="section-title">Latest News</h2>
+        <div class="blog-grid">
+          <article class="blog-card"><img src="images/Industrialisation.jpg" alt="Symposium 2024"><div class="blog-card-content"><h3><a href="blog4.html">Green STEM Symposium 2024: A Call to Action for Industrialization</a></h3><p>August 24, 2024 — a powerful symposium on research-led industrial policy and sustainable energy innovation.</p></div></article>
+          <article class="blog-card"><img src="images/jason.jpg" alt="Green STEM Journey"><div class="blog-card-content"><h3><a href="blog2.html">Empowering Nigeria Through Green STEM: The Journey of Green STEM ECF</a></h3><p>Discover how Green STEM ECF is building a research and innovation ecosystem for future generations.</p></div></article>
+        </div>
+      </section>
+      <section id="contact-section" class="section">
+        <h2 class="section-title">Contact</h2>
+        <div class="feature-box">
+          <p>For questions, partnerships, sponsorships or event enquiries, reach out to our team.</p>
+          <p><strong>Email:</strong> <a href="mailto:info@greenstem.org.ng">info@greenstem.org.ng</a><br><strong>Phone:</strong> <a href="tel:+447438503799">+44 7438 503799</a></p>
+          <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=wGAZJzTEnU-mj66vtm9-RCLTrL2-aZVCiIv-DR43zclUQ0VOTlVFUENFM1JOWUFQSVA4VDBDRjU4Qi4u&embed=true" class="btn btn-primary" target="_blank" rel="noopener">Open Contact Form</a>
+        </div>
+      </section>
+    </main>
+    <aside class="sidebar">
+      <div class="sidebar-card">
+        <div class="sidebar-card-head"><h3 style="margin:0;color:#fff;font-family:'Bebas Neue';">Quick Links</h3></div>
+        <div style="padding:1.3rem;background:#fff;color:var(--ink)">
+          <p><a href="#about-section">About</a></p>
+          <p><a href="#discover-section">Discover</a></p>
+          <p><a href="#team-section">Leadership</a></p>
+          <p><a href="#contact-section">Contact</a></p>
+        </div>
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-card-head"><h3 style="margin:0;color:#fff;font-family:'Bebas Neue';">Impact Summary</h3></div>
+        <div style="padding:1.3rem;background:#fff;color:var(--ink)">
+          <p><strong>Green STEM Symposium</strong><br>Annual convening of research and industry leaders.</p>
+          <p><strong>Mentoring</strong><br>Supporting emerging STEM talent with practical guidance.</p>
+          <p><strong>Funding</strong><br>Promoting innovative finance for research commercialization.</p>
+        </div>
+      </div>
+    </aside>
+  </div>
+  <footer class="footer">
+    <div class="footer-grid">
+      <div><h4>About Us</h4><p>Green Stem ECF advances education, research and innovation by integrating environmental sustainability with STEM.</p></div>
+      <div><h4>Navigation</h4><p><a href="#about-section">About</a></p><p><a href="#discover-section">Discover</a></p><p><a href="#blog-section">Blog</a></p></div>
+      <div><h4>Join Us</h4><p><a href="mailto:info@greenstem.org.ng">info@greenstem.org.ng</a></p><p><a href="https://www.youtube.com/@GSTEMNG" target="_blank">YouTube</a></p></div>
+    </div>
+    <div class="footer-bottom">&copy; <span id="year"></span> Green Stem Educational and Charitable Foundation. All rights reserved.</div>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const progress = document.getElementById('progress-bar');
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.width = docHeight > 0 ? (scrollTop / docHeight) * 100 + '%' : '0%';
+    });
+  </script>
+</body>
+</html>

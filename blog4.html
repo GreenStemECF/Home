@@ -1,0 +1,1324 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      Green STEM Symposium 2024 — A Call to Action for Industrialization in
+      Nigeria
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Karla:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --forest: #1b4332;
+        --forest-mid: #2d6a4f;
+        --forest-light: #40916c;
+        --sage: #74c69d;
+        --mint: #b7e4c7;
+        --cream: #fdfaf3;
+        --parchment: #f4eed8;
+        --gold: #c9973a;
+        --gold-light: #e8c06a;
+        --ink: #1a1a14;
+        --ink-muted: #4a4a3a;
+        --ink-faint: #8a8a7a;
+        --white: #ffffff;
+        --rule: rgba(27, 67, 50, 0.15);
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Karla", sans-serif;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 1.75;
+        color: var(--ink);
+        background: var(--cream);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* ── READING PROGRESS ── */
+      #progress-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 3px;
+        background: var(--gold);
+        width: 0%;
+        z-index: 9999;
+        transition: width 0.1s linear;
+      }
+
+      /* ── HEADER ── */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: var(--forest);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 0 2rem;
+      }
+      .header-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 64px;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 22px;
+        letter-spacing: 0.05em;
+        color: var(--white);
+      }
+      .logo-dot {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: var(--gold);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .logo-dot svg {
+        width: 16px;
+        height: 16px;
+        fill: var(--forest);
+      }
+
+      nav {
+        display: flex;
+        gap: 1.75rem;
+      }
+      nav a {
+        color: rgba(255, 255, 255, 0.72);
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        transition: color 0.2s;
+      }
+      nav a:hover {
+        color: var(--gold-light);
+      }
+
+      /* ── HERO ── */
+      .hero {
+        background: var(--forest);
+        padding: 5rem 2rem 4.5rem;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            ellipse 80% 60% at 70% 50%,
+            rgba(45, 106, 79, 0.45) 0%,
+            transparent 70%
+          ),
+          url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='1' fill='rgba(255,255,255,0.04)'/%3E%3C/svg%3E");
+        pointer-events: none;
+      }
+      .hero-inner {
+        max-width: 820px;
+        margin: 0 auto;
+        position: relative;
+      }
+      .hero-eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 1.5rem;
+      }
+      .tag {
+        font-family: "Karla", sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        background: var(--gold);
+        color: var(--forest);
+        padding: 4px 12px;
+        border-radius: 2px;
+      }
+      .hero-date {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.5);
+        letter-spacing: 0.04em;
+      }
+      .hero h1 {
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 600;
+        font-size: clamp(2.4rem, 5vw, 3.8rem);
+        line-height: 1.1;
+        color: var(--white);
+        margin-bottom: 1.75rem;
+        letter-spacing: -0.01em;
+      }
+      .hero-lead {
+        font-size: 1.15rem;
+        color: rgba(255, 255, 255, 0.72);
+        line-height: 1.65;
+        max-width: 640px;
+        border-left: 3px solid var(--gold);
+        padding-left: 1.25rem;
+      }
+      .hero-meta {
+        margin-top: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+      }
+      .hero-avatar {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: var(--forest-light);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 15px;
+        color: var(--white);
+        flex-shrink: 0;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+      }
+      .hero-author {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.6);
+      }
+      .hero-author strong {
+        color: var(--white);
+        display: block;
+        font-size: 15px;
+      }
+
+      /* ── LAYOUT ── */
+      .page-wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+        display: grid;
+        grid-template-columns: 1fr 320px;
+        gap: 4rem;
+        align-items: start;
+      }
+
+      /* ── ARTICLE BODY ── */
+      .article-body > * + * {
+        margin-top: 1.5rem;
+      }
+
+      .article-body p {
+        font-family: "Karla", sans-serif;
+        font-size: 17px;
+        line-height: 1.8;
+        color: var(--ink-muted);
+      }
+      .article-body p strong {
+        color: var(--ink);
+        font-weight: 700;
+      }
+
+      .article-body h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 600;
+        font-size: 2rem;
+        color: var(--forest);
+        line-height: 1.2;
+        margin-top: 3rem;
+        padding-top: 2.5rem;
+        border-top: 1px solid var(--rule);
+      }
+      .article-body h2:first-child {
+        margin-top: 0;
+        padding-top: 0;
+        border-top: none;
+      }
+
+      /* ── PULL QUOTE ── */
+      .pull-quote {
+        background: var(--forest);
+        border-radius: 4px;
+        padding: 2rem 2.25rem;
+        margin: 2.5rem 0 !important;
+        position: relative;
+      }
+      .pull-quote::before {
+        content: "\201C";
+        font-family: "Cormorant Garamond", serif;
+        font-size: 5rem;
+        line-height: 1;
+        color: var(--gold);
+        position: absolute;
+        top: 0.5rem;
+        left: 1.5rem;
+        opacity: 0.5;
+      }
+      .pull-quote p {
+        font-family: "Cormorant Garamond", serif !important;
+        font-style: italic;
+        font-size: 1.25rem !important;
+        line-height: 1.55 !important;
+        color: var(--white) !important;
+        padding-left: 0.5rem;
+      }
+      .pull-quote p strong {
+        color: var(--gold-light) !important;
+        font-weight: 600;
+      }
+
+      /* ── VIDEO WRAP ── */
+      .video-wrap {
+        margin: 2rem 0;
+        border-radius: 6px;
+        overflow: hidden;
+        border: 1px solid var(--rule);
+        box-shadow: 0 8px 32px rgba(27, 67, 50, 0.1);
+      }
+      .video-wrap iframe {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16/9;
+        border: none;
+      }
+      .video-caption {
+        background: var(--parchment);
+        padding: 0.6rem 1rem;
+        font-size: 13px;
+        color: var(--ink-faint);
+        font-style: italic;
+      }
+
+      /* ── LISTS ── */
+      .article-body ul {
+        padding-left: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.65rem;
+      }
+      .article-body ul li {
+        display: flex;
+        gap: 0.75rem;
+        align-items: baseline;
+        font-family: "Karla", sans-serif;
+        font-size: 16px;
+        line-height: 1.7;
+        color: var(--ink-muted);
+      }
+      .article-body ul li::before {
+        content: "▸";
+        color: var(--forest-light);
+        flex-shrink: 0;
+        font-size: 12px;
+        margin-top: 4px;
+      }
+      .article-body ul li strong {
+        color: var(--ink);
+      }
+
+      /* ── RESOLUTIONS ── */
+      .resolutions-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin: 1.5rem 0;
+      }
+      .resolution-card {
+        background: var(--white);
+        border: 1px solid var(--rule);
+        border-left: 4px solid var(--forest-mid);
+        border-radius: 0 4px 4px 0;
+        padding: 1rem 1.25rem;
+        transition:
+          border-left-color 0.2s,
+          transform 0.2s;
+      }
+      .resolution-card:hover {
+        border-left-color: var(--gold);
+        transform: translateX(3px);
+      }
+      .resolution-num {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 2rem;
+        color: var(--mint);
+        line-height: 1;
+        margin-bottom: 0.35rem;
+      }
+      .resolution-card p {
+        font-size: 14px !important;
+        line-height: 1.55 !important;
+        color: var(--ink-muted) !important;
+        margin: 0 !important;
+      }
+
+      /* ── COMMITMENTS ── */
+      .commitment-block {
+        display: flex;
+        gap: 1.25rem;
+        align-items: flex-start;
+        background: var(--parchment);
+        border-radius: 4px;
+        padding: 1.25rem 1.5rem;
+        margin: 0.75rem 0 !important;
+      }
+      .commitment-icon {
+        width: 40px;
+        height: 40px;
+        background: var(--forest);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .commitment-icon svg {
+        width: 18px;
+        height: 18px;
+        stroke: var(--gold);
+        fill: none;
+        stroke-width: 2;
+        stroke-linecap: round;
+      }
+      .commitment-block p {
+        font-size: 15px !important;
+        color: var(--ink-muted) !important;
+        margin: 0 !important;
+      }
+      .commitment-block p strong {
+        color: var(--forest) !important;
+        display: block;
+        margin-bottom: 2px;
+      }
+
+      /* ── STAT STRIP ── */
+      .stat-strip {
+        display: flex;
+        gap: 1px;
+        background: var(--rule);
+        border: 1px solid var(--rule);
+        border-radius: 6px;
+        overflow: hidden;
+        margin: 2rem 0;
+      }
+      .stat-item {
+        background: var(--white);
+        flex: 1;
+        padding: 1.25rem 1rem;
+        text-align: center;
+      }
+      .stat-number {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 2.5rem;
+        color: var(--forest);
+        line-height: 1;
+        display: block;
+      }
+      .stat-label {
+        font-size: 12px;
+        color: var(--ink-faint);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-top: 4px;
+        display: block;
+      }
+
+      /* ── FINAL CTA ── */
+      .cta-banner {
+        background: var(--forest);
+        border-radius: 8px;
+        padding: 2.5rem;
+        text-align: center;
+        margin-top: 3rem;
+      }
+      .cta-banner p {
+        font-family: "Cormorant Garamond", serif !important;
+        font-size: 1.5rem !important;
+        font-style: italic;
+        color: var(--white) !important;
+        line-height: 1.45 !important;
+        margin: 0 0 1.25rem !important;
+      }
+      .cta-banner p em {
+        color: var(--gold-light);
+        font-style: normal;
+        font-weight: 600;
+      }
+      .cta-btn {
+        display: inline-block;
+        background: var(--gold);
+        color: var(--forest);
+        font-family: "Karla", sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 12px 28px;
+        border-radius: 3px;
+        text-decoration: none;
+        transition:
+          background 0.2s,
+          transform 0.15s;
+      }
+      .cta-btn:hover {
+        background: var(--gold-light);
+        transform: translateY(-1px);
+      }
+
+      /* ── SIGNATURE ── */
+      .signature-block {
+        border-top: 2px solid var(--forest);
+        padding-top: 1.5rem;
+        margin-top: 2.5rem;
+      }
+      .signature-block .sig-label {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--forest-light);
+        margin-bottom: 1rem;
+        display: block;
+      }
+      .sig-names {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .sig-name {
+        font-family: "Karla", sans-serif;
+        font-size: 14px;
+        color: var(--ink-muted);
+        line-height: 1.4;
+      }
+      .sig-name strong {
+        color: var(--ink);
+        font-size: 15px;
+        display: block;
+      }
+
+      /* ── SIDEBAR ── */
+      .sidebar {
+        position: sticky;
+        top: 84px;
+      }
+
+      .sidebar-card {
+        background: var(--white);
+        border: 1px solid var(--rule);
+        border-radius: 6px;
+        overflow: hidden;
+        margin-bottom: 1.5rem;
+      }
+      .sidebar-card-head {
+        background: var(--forest);
+        padding: 1rem 1.25rem;
+      }
+      .sidebar-card-head h3 {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 1.1rem;
+        letter-spacing: 0.08em;
+        color: var(--white);
+        margin: 0;
+      }
+      .sidebar-card-body {
+        padding: 1.25rem;
+      }
+      .sidebar-card-body p {
+        font-size: 14px;
+        line-height: 1.65;
+        color: var(--ink-muted);
+        margin-bottom: 1rem;
+      }
+
+      .sidebar-btn {
+        display: block;
+        width: 100%;
+        text-align: center;
+        background: var(--forest);
+        color: var(--white);
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        padding: 10px;
+        border-radius: 3px;
+        text-decoration: none;
+        transition: background 0.2s;
+      }
+      .sidebar-btn:hover {
+        background: var(--forest-mid);
+      }
+
+      .quick-facts-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+      .quick-facts-list li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.65rem 0;
+        border-bottom: 1px solid var(--rule);
+        font-size: 13px;
+      }
+      .quick-facts-list li:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+      .qf-label {
+        color: var(--ink-faint);
+      }
+      .qf-value {
+        font-weight: 700;
+        color: var(--forest);
+      }
+
+      .tags-cloud {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .tag-chip {
+        font-size: 12px;
+        font-weight: 500;
+        background: var(--parchment);
+        color: var(--forest-mid);
+        border: 1px solid var(--rule);
+        padding: 4px 10px;
+        border-radius: 100px;
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        background: var(--forest);
+        color: rgba(255, 255, 255, 0.65);
+        padding: 3rem 2rem;
+        margin-top: 4rem;
+      }
+      .footer-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 3rem;
+      }
+      footer h4 {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 1.1rem;
+        letter-spacing: 0.1em;
+        color: var(--white);
+        margin-bottom: 1rem;
+      }
+      footer p {
+        font-size: 14px;
+        line-height: 1.7;
+      }
+      footer ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      footer ul li a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        font-size: 14px;
+        transition: color 0.2s;
+      }
+      footer ul li a:hover {
+        color: var(--gold-light);
+      }
+      .footer-social {
+        display: flex;
+        gap: 12px;
+        margin-top: 1rem;
+      }
+      .social-link {
+        width: 36px;
+        height: 36px;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 14px;
+        transition:
+          background 0.2s,
+          color 0.2s;
+      }
+      .social-link:hover {
+        background: var(--gold);
+        color: var(--forest);
+      }
+      .footer-bottom {
+        max-width: 1200px;
+        margin: 2rem auto 0;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.35);
+        text-align: center;
+      }
+
+      /* ── ANIMATIONS ── */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(18px);
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
+      }
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (max-width: 900px) {
+        .page-wrapper {
+          grid-template-columns: 1fr;
+        }
+        .sidebar {
+          position: static;
+        }
+        .resolutions-grid {
+          grid-template-columns: 1fr;
+        }
+        .footer-inner {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+        nav {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="progress-bar"></div>
+
+    <!-- HEADER -->
+    <header>
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <div class="logo-dot">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C6.5 7 4 10 4 14a8 8 0 0016 0c0-4-2.5-7-8-12z" />
+            </svg>
+          </div>
+          Green Stem ECF
+        </a>
+        <nav>
+          <a href="index.html#">Home</a>
+          <a href="index.html#about-section">About</a>
+          <a href="index.html#discover-section">Discover</a>
+          <a href="index.html#donate-section">Donate</a>
+          <a href="index.html#blog-section">Blog</a>
+          <a href="index.html#contact-section">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-inner">
+        <div class="hero-eyebrow fade-in">
+          <span class="tag">GSS2024</span>
+          <span class="hero-date">August 24, 2024</span>
+        </div>
+        <h1 class="fade-in">
+          Green STEM Symposium 2024:<br />A Call to Action for<br />Industrialization
+          in Nigeria
+        </h1>
+        <p class="hero-lead fade-in">
+          Industrialization is not just a dream — it is Nigeria's most viable
+          pathway to socioeconomic transformation.
+        </p>
+        <div class="hero-meta fade-in">
+          <div class="hero-avatar">GS</div>
+          <div class="hero-author">
+            <strong>Green STEM Educational &amp; Charitable Foundation</strong>
+            Registered Nigerian NGO — Promoting Research, Innovation &amp;
+            Commercialization
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN -->
+    <div class="page-wrapper">
+      <article class="article-body">
+        <!-- STAT STRIP -->
+        <div class="stat-strip fade-in">
+          <div class="stat-item">
+            <span class="stat-number">31</span>
+            <span class="stat-label">Global Participants</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">8</span>
+            <span class="stat-label">Key Resolutions</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">3rd</span>
+            <span class="stat-label">Annual Edition</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">7+</span>
+            <span class="stat-label">Research Disciplines</span>
+          </div>
+        </div>
+
+        <p class="fade-in">
+          The third edition of the
+          <strong
+            >Green STEM Educational and Charitable Foundation Symposium
+            (GSS2024)</strong
+          >
+          concluded on Saturday, August 24, 2024. Held as an international
+          virtual event, GSS2024 brought together
+          <strong>31 participants</strong> from across the globe — including
+          academics, policymakers, industry leaders, and civil society
+          representatives — united by a common vision: to build a sustainable,
+          research-driven industrial future for Nigeria and Africa.
+        </p>
+
+        <p class="fade-in">
+          Organized by the
+          <strong
+            >Green STEM Educational and Charitable Foundation (GSECF)</strong
+          >, the symposium centred on the theme:
+          <em
+            >"Industrialization as the Best Systemic Strategy to Solve Nigeria's
+            Socioeconomic Problems."</em
+          >
+        </p>
+
+        <!-- VIDEO -->
+        <div class="video-wrap fade-in">
+          <iframe
+            src="https://www.youtube.com/embed/t8IBWY4aXmQ"
+            title="GREEN STEM SYMPOSIUM 2024"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share;
+            "
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+          <div class="video-caption">
+            ▶ Full recording of the 2024 Green STEM Symposium
+          </div>
+        </div>
+
+        <h2 class="fade-in">Why Industrialization? Why Now?</h2>
+        <p class="fade-in">
+          Nigeria, blessed with abundant natural resources, a youthful
+          population, and rich intellectual potential, continues to grapple with
+          unemployment, energy poverty, poor infrastructure, and low industrial
+          output. While the country has made strides in various sectors,
+          <strong
+            >true progress remains elusive without a strong, science-led
+            industrial base.</strong
+          >
+        </p>
+        <p class="fade-in">
+          The symposium sought to address this gap by offering a platform where
+          ideas could be shared, collaborations forged, and actionable
+          strategies developed. The core mission was clear:
+          <strong
+            >to design a research-driven industrialization roadmap for
+            Nigeria</strong
+          >, one that leverages science, technology, engineering, and innovation
+          to create sustainable growth.
+        </p>
+
+        <h2 class="fade-in">Keynote: Learning from Global Success Stories</h2>
+        <p class="fade-in">
+          The event opened with a keynote address by
+          <strong>Dr. Raj Shankar-Priya</strong>, Professor at the Wolfson
+          School of Mechanical, Electrical and Manufacturing Engineering,
+          Loughborough University, UK. His talk,
+          <em
+            >"Industrialization by Academic Partnership – A German Success
+            Story,"</em
+          >
+          offered a powerful case study in deliberate industrial policy.
+        </p>
+        <p class="fade-in">
+          Dr. Shankar-Priya highlighted how
+          <strong>Germany's economic strength</strong> stems from its deep
+          integration of <strong>university research and industry</strong>,
+          resulting in high-quality mass production, innovation, and global
+          competitiveness — built on
+          <strong>strategic partnerships between academia and industry</strong>,
+          supported by substantial public and private investment in R&amp;D.
+        </p>
+
+        <div class="pull-quote fade-in">
+          <p>
+            <strong
+              >"Nigeria doesn't need to replicate Germany's model exactly — but
+              it must learn from its logic: research-led innovation,
+              academic-industry synergy, and a long-term vision for economic
+              transformation."</strong
+            >
+          </p>
+        </div>
+
+        <p class="fade-in">
+          He underscored a critical truth:
+          <strong
+            >industrialization is not accidental. It is the result of deliberate
+            policy, strategic planning, and sustained commitment.</strong
+          >
+        </p>
+
+        <h2 class="fade-in">A Voice for Innovation: Renewable Energy</h2>
+        <p class="fade-in">
+          <strong>Dr. Uchena Egwu</strong>, former Lead Biogas and Environmental
+          Engineer at COSENG LIMITED, presented
+          <em
+            >"Harnessing Anaerobic Digestion for Renewable Energy: A Pathway to
+            Sustainable and Affordable Cooking Gas in Nigeria."</em
+          >
+          He showcased how
+          <strong
+            >Nigeria's tropical vegetation can be transformed into clean
+            energy</strong
+          >
+          through advanced anaerobic digestion technologies.
+        </p>
+        <p class="fade-in">
+          With over
+          <strong
+            >90% of Nigerian households still relying on wood or charcoal for
+            cooking</strong
+          >, Dr. Egwu presented biogas from organic waste as a low-carbon
+          solution to energy poverty — one that simultaneously reduces
+          deforestation and greenhouse gas emissions.
+        </p>
+
+        <div class="pull-quote fade-in">
+          <p>
+            <strong
+              >"Industrialization must be green. It must empower communities,
+              protect the environment, and create jobs — not just in factories,
+              but in clean tech and sustainable agriculture."</strong
+            >
+          </p>
+        </div>
+
+        <h2 class="fade-in">A Showcase of Research: From Geosciences to AI</h2>
+        <p class="fade-in">
+          The symposium featured a diverse range of research presentations,
+          reflecting the breadth of innovation happening in Nigeria today:
+        </p>
+        <ul class="fade-in">
+          <li>
+            <strong>Geosciences:</strong> Hydrocarbon potential in the Sokoto
+            Basin; solid mineral prospects in Kano State; petrographic study of
+            lepidolite-granite in Kwara State.
+          </li>
+          <li>
+            <strong>Artificial Intelligence:</strong> Machine learning applied
+            to membrane performance, green hydrogen adoption forecasting, and
+            oil-water separation efficiency.
+          </li>
+          <li>
+            <strong>Engineering:</strong> Breakthroughs in small molecule
+            reduction, tool wear modelling, and nanocomposite fabrication using
+            sustainable methods.
+          </li>
+          <li>
+            <strong>Agriculture:</strong> Solutions for clean water access in
+            rural Nigeria through industrialized approaches to agricultural
+            productivity.
+          </li>
+          <li>
+            <strong>Education:</strong> Digital competences among biology
+            teachers and their impact on student performance in Minna, Niger
+            State.
+          </li>
+          <li>
+            <strong>Entrepreneurship:</strong> Tax compliance among Kano-based
+            businesswomen, highlighting the need for targeted policy support.
+          </li>
+          <li>
+            <strong>Information Technology:</strong> Student access to computers
+            in secondary schools across Kano — a critical step toward digital
+            literacy.
+          </li>
+        </ul>
+
+        <h2 class="fade-in">Resolutions: A Blueprint for Action</h2>
+        <p class="fade-in">
+          After days of dynamic discussion, the symposium culminated in
+          <strong>eight key resolutions</strong> — a roadmap for stakeholders
+          committed to Nigeria's industrial future.
+        </p>
+
+        <div class="resolutions-grid fade-in">
+          <div class="resolution-card">
+            <div class="resolution-num">01</div>
+            <p>
+              Reassess and implement Nigeria's revised industrialization
+              strategy with urgency.
+            </p>
+          </div>
+          <div class="resolution-card">
+            <div class="resolution-num">02</div>
+            <p>
+              Transition to a knowledge-based economy, with universities at the
+              core of solving economic challenges.
+            </p>
+          </div>
+          <div class="resolution-card">
+            <div class="resolution-num">03</div>
+            <p>
+              Increase education and R&amp;D budgets to a constitutional level —
+              a national priority.
+            </p>
+          </div>
+          <div class="resolution-card">
+            <div class="resolution-num">04</div>
+            <p>
+              Strengthen academia-industry partnerships to produce
+              industry-ready graduates and foster innovation.
+            </p>
+          </div>
+          <div class="resolution-card">
+            <div class="resolution-num">05</div>
+            <p>
+              Introduce industrialization education early — starting in primary
+              schools — to cultivate a culture of innovation.
+            </p>
+          </div>
+          <div class="resolution-card">
+            <div class="resolution-num">06</div>
+            <p>
+              Prioritize agriculture and renewable energy for job creation,
+              revenue diversification, and sustainable infrastructure.
+            </p>
+          </div>
+          <div class="resolution-card">
+            <div class="resolution-num">07</div>
+            <p>
+              Revamp the education system, focusing on research-based teaching
+              strategies and teacher development.
+            </p>
+          </div>
+          <div class="resolution-card">
+            <div class="resolution-num">08</div>
+            <p>
+              Learn from global leaders like Germany — study their models, adapt
+              their frameworks, apply their lessons.
+            </p>
+          </div>
+        </div>
+
+        <h2 class="fade-in">Commitments from the Community</h2>
+        <p class="fade-in">
+          Participants didn't just leave with ideas — they left with
+          commitments:
+        </p>
+
+        <div class="commitment-block fade-in">
+          <div class="commitment-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 20V4M4 12l8-8 8 8" /></svg>
+          </div>
+          <p>
+            <strong>Commitment 1 — Spreading the Word</strong>Advocating for
+            industrialization in Nigeria through public awareness campaigns and
+            sustained policy dialogue.
+          </p>
+        </div>
+        <div class="commitment-block fade-in">
+          <div class="commitment-icon">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 8v4l3 3" />
+            </svg>
+          </div>
+          <p>
+            <strong>Commitment 2 — Offering to Help</strong>Supporting
+            government efforts to reposition Nigeria on the path to sustainable
+            industrialization.
+          </p>
+        </div>
+        <div class="commitment-block fade-in">
+          <div class="commitment-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
+            </svg>
+          </div>
+          <p>
+            <strong>Commitment 3 — Collaborating &amp; Networking</strong
+            >Partnering with Nigerian and international researchers to
+            co-develop solutions for industrial transformation.
+          </p>
+        </div>
+
+        <h2 class="fade-in">Looking Ahead: From Dialogue to Development</h2>
+        <p class="fade-in">
+          The Green STEM Symposium 2024 was more than a conference — it was
+          <strong>a movement in the making</strong>. It brought together the
+          best minds in Nigeria and beyond to envision a future where science,
+          innovation, and industrialization drive national prosperity.
+        </p>
+        <p class="fade-in">
+          The recommendations from GSS2024 will be shared with policymakers,
+          academic institutions, private sector actors, and development
+          partners. The goal: to <strong>turn research into reality</strong> —
+          one industrialized community at a time.
+        </p>
+
+        <div class="cta-banner fade-in">
+          <p>
+            "We are not just dreaming of progress — we are building the
+            foundation for it.<br /><em>The time to act is now.</em>"
+          </p>
+          <a href="index.html" class="cta-btn">Explore Green Stem ECF</a>
+        </div>
+
+        <!-- SIGNATURE -->
+        <div class="signature-block fade-in">
+          <span class="sig-label">Issued by the Green STEM ECF Leadership</span>
+          <div class="sig-names">
+            <div class="sig-name">
+              <strong>Dr. Perpetual Eze-Idehen</strong>
+              Coordinator, Green STEM ECF
+            </div>
+            <div class="sig-name">
+              <strong>Dr. Chukwuma Ogbonnaya</strong>
+              Lead, Organizational Development &amp; Partnerships
+            </div>
+            <div class="sig-name">
+              <strong>Dr. Mohammad Yadudu</strong>
+              Chair, Green STEM ECF Symposium 2024
+            </div>
+            <div class="sig-name">
+              <strong>Dr. Waheed Akande</strong>
+              BOT Chairman, Green STEM ECF
+            </div>
+            <div class="sig-name">
+              <strong>Dr. Mutari Lawal</strong>
+              Secretary, Green STEM ECF
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="sidebar-card fade-in">
+          <div class="sidebar-card-head">
+            <h3>About the Foundation</h3>
+          </div>
+          <div class="sidebar-card-body">
+            <p>
+              Green Stem Educational and Charitable Foundation focuses on
+              promoting Research, Innovation and Commercialisation of Research
+              (RIC) as the sustainable pathway to industrialisation of Nigeria
+              and Africa.
+            </p>
+            <a href="index.html" class="sidebar-btn">Visit Homepage</a>
+          </div>
+        </div>
+
+        <div class="sidebar-card fade-in">
+          <div class="sidebar-card-head">
+            <h3>Quick Facts</h3>
+          </div>
+          <div class="sidebar-card-body">
+            <ul class="quick-facts-list">
+              <li>
+                <span class="qf-label">Date</span
+                ><span class="qf-value">Aug 24, 2024</span>
+              </li>
+              <li>
+                <span class="qf-label">Format</span
+                ><span class="qf-value">International Virtual</span>
+              </li>
+              <li>
+                <span class="qf-label">Participants</span
+                ><span class="qf-value">31</span>
+              </li>
+              <li>
+                <span class="qf-label">Edition</span
+                ><span class="qf-value">3rd Annual</span>
+              </li>
+              <li>
+                <span class="qf-label">Resolutions</span
+                ><span class="qf-value">8</span>
+              </li>
+              <li>
+                <span class="qf-label">Disciplines</span
+                ><span class="qf-value">7+</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="sidebar-card fade-in">
+          <div class="sidebar-card-head">
+            <h3>Tags</h3>
+          </div>
+          <div class="sidebar-card-body">
+            <div class="tags-cloud">
+              <span class="tag-chip">#GreenSTEM2024</span>
+              <span class="tag-chip">#IndustrializationNigeria</span>
+              <span class="tag-chip">#ResearchForDevelopment</span>
+              <span class="tag-chip">#NigeriaRising</span>
+              <span class="tag-chip">#STEM</span>
+              <span class="tag-chip">#Biogas</span>
+              <span class="tag-chip">#CleanEnergy</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-card fade-in">
+          <div class="sidebar-card-head">
+            <h3>Follow Us</h3>
+          </div>
+          <div class="sidebar-card-body">
+            <div class="footer-social">
+              <a
+                class="social-link"
+                href="https://www.youtube.com/@GSTEMNG"
+                title="YouTube"
+                aria-label="YouTube"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.4 5 12 5 12 5s-4.4 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5C2 14.3 2.2 16 2.2 16s.2 1.4.8 2c.8.8 1.8.8 2.2.8C6.4 19 12 19 12 19s4.4 0 7-.1c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2S22 14.3 22 12.7v-1.5C22 9.6 21.8 8 21.8 8zM10 15V9l5.2 3-5.2 3z"
+                  />
+                </svg>
+              </a>
+              <a
+                class="social-link"
+                href="https://www.linkedin.com/company/green-stem-educational-and-charitable-foundation/posts/?feedView=all"
+                title="LinkedIn"
+                aria-label="LinkedIn"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <div>
+          <h4>About Us</h4>
+          <p>
+            Green Stem Educational and Charitable Foundation focuses on
+            promoting Research, Innovation and Commercialisation of Research
+            (RIC) as the sustainable pathway to industrialisation of Nigeria and
+            Africa.
+          </p>
+        </div>
+        <div>
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html#">Home</a></li>
+            <li><a href="index.html#about-section">About Us</a></li>
+            <li><a href="index.html#testimonials-section">Testimonials</a></li>
+            <li><a href="index.html#donate-section">Donate</a></li>
+            <li><a href="index.html#contact-section">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Volunteer</h4>
+          <p>
+            Join us — share your time, skills, and passion to inspire young
+            minds and support STEM education for a sustainable future.
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; <span id="year"></span> Green Stem Educational and Charitable
+        Foundation. All rights reserved.
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      const bar = document.getElementById("progress-bar");
+      window.addEventListener("scroll", () => {
+        const scrollTop = window.scrollY;
+        const docH = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (scrollTop / docH) * 100 + "%";
+      });
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add("visible");
+          });
+        },
+        { threshold: 0.12 },
+      );
+      document
+        .querySelectorAll(".fade-in")
+        .forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>
