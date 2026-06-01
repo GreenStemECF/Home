@@ -37,8 +37,19 @@
           <a href="index.html#blog-section">Blog</a>
           <a href="index.html#contact-section">Contact</a>
         </nav>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </header>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="index.html" onclick="closeMobile()">Home</a>
+      <a href="index.html#about-section" onclick="closeMobile()">About</a>
+      <a href="index.html#discover-section" onclick="closeMobile()">Discover</a>
+      <a href="index.html#donate-section" onclick="closeMobile()">Donate</a>
+      <a href="index.html#blog-section" onclick="closeMobile()">Blog</a>
+      <a href="index.html#contact-section" onclick="closeMobile()">Contact</a>
+    </div>
 
     <!-- HERO -->
     <div class="hero">
@@ -736,6 +747,17 @@
       document
         .querySelectorAll(".fade-in")
         .forEach((el) => observer.observe(el));
+
+      const hamburger = document.getElementById("hamburger");
+      const mobileNav = document.getElementById("mobileNav");
+      if (hamburger && mobileNav) {
+        hamburger.addEventListener("click", () => {
+          mobileNav.classList.toggle("open");
+        });
+      }
+      function closeMobile() {
+        mobileNav?.classList.remove("open");
+      }
     </script>
   </body>
 </html>
