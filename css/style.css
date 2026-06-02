@@ -3928,3 +3928,53 @@ body.page-symposium .commitment-icon svg {
   font-weight: 700;
   text-decoration: none;
 }
+
+/* Mobile fixes: prevent horizontal overflow on detail tables and grids */
+@media (max-width: 768px) {
+  body.page-callforabstract .page-wrapper,
+  body.page-journey .page-wrapper {
+    padding: 2rem 1rem;
+  }
+
+  body.page-callforabstract .detail-table,
+  body.page-callforabstract .resolutions-grid,
+  body.page-symposium .resolutions-grid,
+  body.page-journey .resolutions-grid {
+    grid-template-columns: 1fr;
+    overflow: visible;
+  }
+
+  body.page-callforabstract .detail-table tr,
+  body.page-symposium .detail-table tr {
+    display: block;
+    margin-bottom: 0.75rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  body.page-callforabstract .detail-table td,
+  body.page-symposium .detail-table td {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.5rem 0;
+  }
+
+  body.page-callforabstract .detail-table td:first-child,
+  body.page-symposium .detail-table td:first-child {
+    white-space: normal;
+    width: auto;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  body.page-callforabstract .resolution-card,
+  body.page-symposium .resolution-card {
+    padding: 1rem;
+  }
+
+  body.page-callforabstract .speakers-grid,
+  body.page-journey .speakers-grid {
+    grid-template-columns: 1fr;
+  }
+}
